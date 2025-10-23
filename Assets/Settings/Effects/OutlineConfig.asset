@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18045a89be527d842a02efa655726edb, type: 3}
+  m_Name: OutlineConfig
+  m_EditorClassIdentifier: Assembly-CSharp::AAA.Outline.OutlineConfig
+  defaultSettings:
+    color: {r: 1, g: 0.6, b: 0, a: 1}
+    thicknessPixels: 4
+    thicknessWorld: 0.05
+    useWorldSpaceThickness: 1
+    alpha: 1
+    zTest: 4
+    zWrite: 1
+    cullMode: 1
+    useFresnel: 0
+    fresnelPower: 3
+    fresnelBias: 0
+    usePulse: 0
+    pulseAmplitude: 0.2
+    pulseSpeed: 3
+    edgeSoftness: 0
+  outlineMaterialTemplate: {fileID: 2100000, guid: a143a989c061ccd4dad9423dad3dfe63, type: 2}

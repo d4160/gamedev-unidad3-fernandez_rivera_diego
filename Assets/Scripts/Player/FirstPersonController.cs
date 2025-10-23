@@ -19,6 +19,10 @@ public class FirstPersonController : MonoBehaviour
     private Vector2 _moveInput;
     private Vector2 _lookInput;
     private float _xRotation = 0f;
+    
+    private float _verticalVelocity = 0f;
+    private float _gravity = -9.81f;
+
 
     void Awake()
     {
@@ -79,6 +83,18 @@ public class FirstPersonController : MonoBehaviour
     private void HandleMovement()
     {
         Vector3 moveDirection = transform.forward * _moveInput.y + transform.right * _moveInput.x;
+
+        if (_characterController.isGrounded)
+        {
+            _verticalVelocity = -1f; // Pequeño valor para mantenerlo pegado al suelo
+        }
+        else
+        {
+            _verticalVelocity += _gravity * Time.deltaTime;
+        }
+        
+        // Combinar movimiento horizontal y vertical
+        moveDirection.y = _verticalVelocity;
 
         _characterController.Move(moveDirection * _movementSpeed * Time.deltaTime);
     }
