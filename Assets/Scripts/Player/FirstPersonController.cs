@@ -40,8 +40,9 @@ public class FirstPersonController : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        // Esto ya no es necesario, lo maneja UIManager
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     void OnEnable()
