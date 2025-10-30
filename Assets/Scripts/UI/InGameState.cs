@@ -7,6 +7,9 @@ public class InGameState : UIState
     public override void Enter()
     {
         Debug.Log("Entrando al estado de En Juego");
+
+        Object.FindFirstObjectByType<FirstPersonController>().enabled = true;
+
         m_uiManager.inGameHudPanel.SetActive(true);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;

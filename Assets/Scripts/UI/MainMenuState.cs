@@ -8,6 +8,7 @@ public class MainMenuState : UIState
     {
         Debug.Log("Entrando al estado de Main Menu");
         m_uiManager.mainMenuPanel.SetActive(true);
+        m_uiManager.victoryPanel.SetActive(false);
         Time.timeScale = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

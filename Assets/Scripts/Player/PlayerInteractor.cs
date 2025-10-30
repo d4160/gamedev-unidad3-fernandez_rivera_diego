@@ -94,13 +94,15 @@ public class PlayerInteractor : MonoBehaviour
 
         if (_current != null)
         {
-            _current.GetComponent<OutlineComponent>().Remove();
+            _current.GetComponent<OutlineComponent>()?.Remove();
             _onTargetLost?.Invoke(_current);
         }
 
         _current = target;
-        _current.GetComponent<OutlineComponent>().Apply();
+        _current.GetComponent<OutlineComponent>()?.Apply();
         _onTargetFocused?.Invoke(_current);
+
+        GameEvents.TriggerTargetFocused(_current);
     }
     
     /// <summary>
@@ -110,9 +112,11 @@ public class PlayerInteractor : MonoBehaviour
     {
         if (_current == null) return;
 
-        _current.GetComponent<OutlineComponent>().Remove();
+        _current.GetComponent<OutlineComponent>()?.Remove();
 
         _onTargetLost?.Invoke(_current);
+
+        GameEvents.TriggerTargetLost(_current);
 
         _current = null;
     }
